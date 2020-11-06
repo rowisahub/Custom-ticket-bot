@@ -13,3 +13,5 @@ ____________________________________
 Do `[prefix]help` to get the commands
 
 After you to the `[prefix]setup` command remember to add the admin you want to do tickets to the Ticket Admin role. They will be added to the text channel when the user asks for a ticket
+
+every time the bot shuts down or dissconnets you have to re-run the ticket command
