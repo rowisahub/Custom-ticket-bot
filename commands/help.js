@@ -1,7 +1,6 @@
 exports.run = (message, args, client, Discord, fs, ops) => {
 	const prefix = ops.prefix
 	const embedcolor = '#00D166';
-
 	const helpesing = new Discord.MessageEmbed()
 		.setColor(embedcolor)
 		.setAuthor('Help Area', client.user.displayAvatarURL())
@@ -11,7 +10,5 @@ exports.run = (message, args, client, Discord, fs, ops) => {
 			{ name: 'ticket', value: 'this sends the message with the emoji that users need to react to. Only users with the perm. administrator can use this command', inline: true },
 			{ name: 'help', value: 'shows this message', inline: true },
 		)
-	
-
 	message.channel.send(helpesing);
 }
