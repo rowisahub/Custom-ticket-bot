@@ -6,8 +6,9 @@ ____________________________________
 
 1. Set stuff up in the config first.
 2. then do `npm i`
-3. Start the bot before it enters the server, as it creates a config for it when it gets added to a guild
-4. Make sure it has administrator
+3. then `node .`
+4. Start the bot before it enters the server, as it creates a config for it when it gets added to a guild
+5. Make sure it has administrator
 
 Do `[prefix]help` to get the commands
 
