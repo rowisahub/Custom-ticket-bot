@@ -1,4 +1,5 @@
 exports.run = (message, args, client, Discord, fs, ops) => {
+	var nonya =client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)
 	const guild = ops.guild
 	const guildID = ops.guildID
 	const conf = ops.conf
