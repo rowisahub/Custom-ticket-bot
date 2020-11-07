@@ -10,6 +10,7 @@ exports.run = (message, args, client, Discord, fs, ops) => {
 			{ name: 'ticket', value: 'this sends the message with the emoji that users need to react to. Only users with the perm. administrator can use this command', inline: true },
 			{ name: 'help', value: 'shows this message', inline: true },
 			{ name: 'close', value: 'Closes the ticket. Only works in the ticket, only Admin can close it.', inline: true },
+			{ name: 'ticketinfo', value: 'Show current server ticket info', inline: true },
 		)
 	message.channel.send(helpesing);
 }
