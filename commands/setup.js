@@ -6,6 +6,7 @@ exports.run = (message, args, client, Discord, fs, ops) => {
 	const prefix = ops.prefix
 	const SpefGuilJCnf = ops.SpefGuilJCnf
 	const passconfig = SpefGuilJCnf.passconfig
+	const ticketemoji = ops.ticketemoji
 	const guConDir = `./data/guildConfigs/${guildID}-config.json`
 	if(passconfig===false) return message.channel.send("The config is already set up. if you need to change something use the change/replace command")
 	if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send('You need to have administrator permissions to use this')

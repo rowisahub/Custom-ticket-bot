@@ -1,5 +1,6 @@
 exports.run = (message, args, client, Discord, fs, ops) => {
 	try{
+		const ticketemoji = ops.ticketemoji
 		const guild = ops.guildID
 		const guildID = ops.guildID
 		const conf = ops.conf
@@ -18,11 +19,11 @@ exports.run = (message, args, client, Discord, fs, ops) => {
 		const ticketEM = new Discord.MessageEmbed()
 			.setColor(embedcolor)
 			.setAuthor('TICKET', client.user.displayAvatarURL(), 'https://rowisabeast.com')
-			.setDescription('React to <:ticket:772937494920036392> to create a ticket')
+			.setDescription('React to '+ticketemoji+' to create a ticket'+'\n'+"If the react doesn't work first time, do `"+prefix+"help` then try again")
 			.setFooter("Ticket")
 			.setTimestamp()
 		message.channel.send({ embed: ticketEM }).then(embedMessage => {
-			embedMessage.react('<:ticket:772937494920036392>')
+			embedMessage.react(ticketemoji)
 		})
 	}catch(e){
 		message.channel.send('Error: '+e)

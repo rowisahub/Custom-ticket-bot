@@ -1,10 +1,11 @@
 const Discord = require('discord.js'); // 
-const client = new Discord.Client(); // 
+const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] }); // 
 const fs = require('fs'); // 
 const conf = require('./config/config.json')
 const guildConfDir = './data/guildConfigs/'
 const token = conf.token
 const prefix = conf.prefix
+const ticketemoji = conf.ticketemoji
 console.clear()
 if(prefix===''){
 	console.log("Please put a prefix in the config file.") // checks to see if there is nothing in the prefix varible in the config
@@ -19,6 +20,12 @@ if(token===''){
 		process.exit();
 	}, 1);
 	return
+}
+if(ticketemoji===''){
+	console.log("Please put the id of the emoji you want to use, EX. <:ticket:772937494920036392> | put it in the config just like that, '<:ticket:772937494920036392>'")
+	setTimeout(function(){
+		process.exit();
+	}, 1)
 }
 client.once('ready', () => { 
 	console.log(`Logged in as: ${client.user.tag}`);
@@ -51,7 +58,8 @@ client.on('message' , message => {
 			prefix: prefix,
 			guildID: guildID,
 			SpefGuilJCnf: SpefGuilJCnf,
-			guild: guild
+			guild: guild,
+			ticketemoji: ticketemoji
 		}
 		commandFile.run(message, args, client, Discord, fs, ops);
 	} catch (error) {
@@ -59,7 +67,7 @@ client.on('message' , message => {
 		message.reply('there was an error trying to execute that command!');
 	}
 })
-client.on('messageReactionAdd', async (reaction, user) => {
+client.on('messageReactionAdd', async(reaction, user) => {
 	if (user.bot) return;
 	let emoji = reaction.emoji;
 	const guildID = reaction.message.guild.id;
