@@ -76,15 +76,5 @@ client.on('messageReactionAdd', async(reaction, user) => {
 	delete require.cache[require.resolve(`./data/handlers/messageReactionAdd.js`)];
 	let commandFile = require(`./data/handlers/messageReactionAdd.js`);
 	commandFile.run(reaction, user, emoji, SpefGuilJCnf, client, guildID);
-	
-	// if (reaction.partial) {
-		// try {
-			// await reaction.fetch();
-		// } catch (error) {
-			// console.error('Something went wrong when fetching the message: ', error);
-			// return;
-		// }
-	// }
-	// console.log(`${user.username} reacted with "${reaction.emoji.name}".`);
 })
 client.login(token);
