@@ -1,23 +1,15 @@
 {
   "name": "cusbot",
-  "version": "6.9",
+  "version": "1.0.0",
+  "description": "",
   "main": "ticketBot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Row#1111",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.4.1",
     "fs": "0.0.1-security"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rowisahub/Custom-ticket-bot.git"
-  },
-  "bugs": {
-    "url": "https://github.com/rowisahub/Custom-ticket-bot/issues"
-  },
-  "homepage": "https://github.com/rowisahub/Custom-ticket-bot#readme",
-  "description": ""
+  }
 }

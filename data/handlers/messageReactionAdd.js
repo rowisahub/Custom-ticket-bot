@@ -40,11 +40,17 @@ exports.run = async(reaction, user, emoji, SpefGuilJCnf, client, guildID) => {
 			}
 		}
 		const reactedUserID = user.id
+		
+		// console.log(reactedUserID)
+		
 		const channelID = SpefGuilJCnf.channelid
 		const roleID = SpefGuilJCnf.roleid
 		const ayy = reaction.client.emojis.cache.get("772937494920036392");
 		if(emoji.name!==ayy.name) return reaction.remove(emoji.name);
 		if(reaction.message.channel.id === channelID){
+			
+			// console.log(user)
+			
 			reaction.users.remove(user);
 			const ticketnums = ticnum(SpefGuilJCnf)
 			var newticket = `ticket-${ticketnums}`
