@@ -13,7 +13,7 @@ exports.run = (message, args, client, fs, ops) => {
 		var channelID = SpefGuilJCnf.channelid
 		var roleID = SpefGuilJCnf.roleid
 		var ticketnum = SpefGuilJCnf.ticketnum
-		if(!ticketnum) var senticketnum = 'There are no tickert that were created'
+		if(!ticketnum || ticketnum===undefined || ticketnum===0) var senticketnum = 'There are no tickets that were created'
 		var senticketnum = 'There is `'+ticketnum+'` tickets that were created'
 		var senchannelID = 'The ID for the text channel the ticket creater is in: `'+channelID+'`'
 		var senroleID = 'The ID for the role that gets added to the ticket to help: `'+roleID+'`'
